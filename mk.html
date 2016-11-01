@@ -11,6 +11,17 @@
 
 var i = 1;
 //var interval = setInterval(survay, 5000);
+var starter = document.getElementById('switch');
+var interval;
+starter.onclick = function(){
+  if(starter.value == 'start'){
+    interval = setInterval(survay, 5000);
+    starter.value = 'stop';
+  }else{
+    clearInterval(interval);
+    starter.value = 'start';
+  }
+}
 
 function survay(){
   var id = Math.round(Math.random() * 1000);
